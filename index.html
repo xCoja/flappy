@@ -34,7 +34,10 @@
     <H2>Players  not allowed : <br> Surrafel Ephrem - reason: Too dark</H2>
     
     <canvas id="gameCanvas" width="400" height="400"></canvas>
-    
+    <audio id="gameOverSound">
+        <source src="gameover.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <script>
         // Canvas setup
         const canvas = document.getElementById("gameCanvas");
@@ -143,6 +146,9 @@
                 ctx.fillText("Game Over", canvas.width / 2 - 100, canvas.height / 2 - 20);
                 ctx.font = "20px Arial";
                 ctx.fillText("Press Space to Play Again", canvas.width / 2 - 120, canvas.height / 2 + 20);
+
+                // Play game over sound
+                document.getElementById("gameOverSound").play();
             }
         }
 
